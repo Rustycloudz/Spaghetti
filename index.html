@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10th Annual Spaghetti Dinner - Knights of Columbus</title>
+    <style>
+       
+        body {
+        /* The Image Link */
+    background-image: url('https://pixabay.com/get/g20ba22d1de4d7218346d3360e202af6f6ac6a2e73c210882a7f5f0b62cf51b5129ba0b0cf61b11e34953a1e96d8c9c014432f04028071cb51e89ff134fbf9552_1280.jpg');
+
+    /* This ensures the photo fills the space without distortion */
+    background-size: cover;
+    
+    /* This keeps the image centered as the screen size changes */
+    background-position: center;
+    
+    /* Optional: Sets a minimum height so the image is visible */
+    min-height: 300px;
+    
+    /* Prevents the image from tiling */
+    background-repeat: no-repeat;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            color: rgba(246, 211, 45, 0.86);
+            line-height: 1.6;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            border-bottom: 5px solid;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: -40px auto 40px;
+            background: rgba(24, 21, 76, 0.68);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(246, 211, 45, 0.42);
+        }
+
+        h1 { font-size: 2.5rem; margin: 0; text-transform: uppercase; letter-spacing: 2px; }
+        h2 { border-bottom: 2px solid; padding-bottom: 5px; }
+
+        .event-details {
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .date { font-size: 1.5rem; font-weight: bold; color: rgba(246, 211, 45, 0.86);}
+        .time { font-size: 1.2rem; margin-top: 5px;}
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        td { padding: 12px; border-bottom: 1px solid #ddd; }
+        .price { text-align: right; font-weight: bold; font-size: 1.2rem; }
+
+        .family-plan {
+            background-color: rgba(97, 91, 210, 0.13);
+            padding: 20px;
+            text-align: center;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        .cta-section {
+            text-align: center; 
+            margin-top: 40px; 
+            padding: 20px; 
+            border-top: 1px solid #eee;
+        }
+
+        .btn-call {
+            display: inline-block;
+            background-color: rgba(246, 211, 45, 0.68);
+            color: rgba(24, 21, 76, 1) ;
+            padding: 18px 35px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            box-shadow: 0 4px 10px rgba(246, 211, 45, 0.42);
+            transition: all 0.3s ease;
+        }
+
+        .btn-call:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(248, 228, 92, 0.42));
+            background-color: rgba(248, 228, 92, 0.86);
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <p style="margin-bottom: 10px; font-weight: bold;">Knights of Columbus</p>
+    <h1>10th Annual Spaghetti Dinner</h1>
+    <p style="font-style: italic;">Fundraiser Event</p>
+</header>
+
+<div class="container">
+    <div>
+        <div class="date">Saturday, January 31st, 2026</div>
+        <div class="time">6:15 PM (Directly after 5 O'Clock Mass)</div>
+    </div>
+
+    <h2>Ticket Pricing</h2>
+    <table>
+        <tr>
+            <td>Adults</td>
+            <td class="price">$20</td>
+        </tr>
+        <tr>
+            <td>Youth (Under 12)</td>
+            <td class="price">$15</td>
+        </tr>
+        <tr>
+            <td>Kids (Under 6)</td>
+            <td class="price">FREE</td>
+        </tr>
+    </table>
+
+    <div class="family-plan">
+        <strong>BEST DEAL: The Family Plan</strong><br>
+        $70 for 4 or more family members
+    </div>
+
+    <div class="cta-section">
+        <h3>Ready to Join Us?</h3>
+        <p>Tickets are available now. Call us to reserve yours!</p>
+        
+        <a id="ticket-button" href="#" class="btn-call">
+            📞 GET YOUR TICKET
+        </a>
+        
+        <p id="caller-note" style="margin-top: 15px; font-size: 0.8rem; color: #888;">
+            Connecting you to an available organizer...
+        </p>
+    </div>
+
+    <h2 style="margin-top:40px;">About the Event</h2>
+    <p>Join us for an evening of delicious food and community spirit! Our 10th annual fundraiser features authentic spaghetti, meatballs, fresh bread, and refreshments. All proceeds support the local charitable initiatives of the Knights of Columbus.</p>
+</div>
+
+<div class="footer">
+    &copy; 2026 Knights of Columbus Fundraiser. All rights reserved.
+</div>
+
+<script>
+    (function() {
+        const encoded = [
+            "0203817915", 
+            "8118765622"  
+        ];
+
+        
+        const pick = Math.floor(Math.random() * encoded.length);
+        const selected = encoded[pick];
+
+        
+        const decoded = selected.split("").reverse().join("");
+
+        const button = document.getElementById('ticket-button');
+        button.href = "tel:" + decoded;
+        console.log("Organizer " + (pick + 1) + " selected.");
+    })();
+</script>
+
+</body>
+</html>
